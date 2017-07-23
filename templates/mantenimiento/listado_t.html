@@ -1,0 +1,22 @@
+{% extends 'Base.html' %}
+{% block title %}
+    Listado Tiket
+{% endblock %}
+{% block headers %}
+{% endblock %}
+
+{% block content %}
+    <div id="inner_content">
+
+        <table class="table table-responsive">
+            {% for t in tiquets %}
+                <td>
+                    <tr>{{ t.nombre }}</tr>
+                    <tr>{{ t.duracion }}</tr>
+                    <tr>{{ t.algo }}</tr>
+                </td>
+            {% endfor %}
+        </table>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'Base.html' %}
+{% block title %}
+    Nuevo Tiket
+{% endblock %}
+{% block headers %}
+
+{% endblock %}
+{% block content %}
+    Esto es le nuevo tiquet
+    <br>
+
+    {{ var1 }}
+    {{ lovar }}
+
+    <div id="inner_content">
+
+
+        <form method="POST">{% csrf_token %}
+
+            <select name="cliente" class="sel_cli">
+              {% for cli in clientes %}
+                <option value="{{ cli.id }}">{{ cli.customer }}</option>
+              {% endfor %}
+            </select>
+            <select>
+                <option value="A">Alta</option>
+                <option value="M">Media</option>
+                <option value="B">Baja</option>
+            </select>
+            <input type="text" name="nombret" />
+            <input type="textarea" name="desc" />
+
+            <input type="submit">
+
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+          $(".sel_cli").select2();
+        });
+    </script>
+
+{% endblock %}
